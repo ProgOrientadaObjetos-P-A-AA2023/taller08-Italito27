@@ -21,7 +21,6 @@ public class Ejecutor {
 
             System.out.println("Ingrese 1 para crear un Docente con nombramiento");
             System.out.println("Ingrese 2 para crear un Docente con factura:");
-            System.out.println("Ingrese 3 para salir del sistema");
             int opcion = entrada.nextInt();
             entrada.nextLine();
 
@@ -58,10 +57,7 @@ public class Ejecutor {
                 docenteF.establecerCedula(cedula);
                 docenteF.calcularValorCancelar();
                 System.out.printf("%s\n", docenteF);
-            } else if (opcion == 3) {
-                lim = false;
-                System.out.println("Saliendo del sistema...");
-                break;
+
             } else {
                 System.out.println("Error, opción no válida.");
             }
@@ -71,7 +67,7 @@ public class Ejecutor {
             entrada.nextLine();
             if (respuesta.equals("s") ) {
                 lim = false;
-            }    
-        } while (lim);
+            } 
+        } while (lim == true);
     }
 }
