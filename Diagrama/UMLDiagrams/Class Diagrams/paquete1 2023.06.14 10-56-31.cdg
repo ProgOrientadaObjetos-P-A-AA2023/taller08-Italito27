@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="paquete1">
+  <ClassDiagramComponents>
+    <Class name="Docente" package="paquete1" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombres" type="String" visibility="protected"/>
+        <Field name="cedula" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombres"/>
+          <Argument type="String" name="cedula"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerNombres" returnType="String" visibility="public"/>
+        <Method name="establecerNombres" returnType="void" visibility="public">
+          <Argument type="String" name="nombres"/>
+        </Method>
+        <Method name="obtenerCedula" returnType="String" visibility="public"/>
+        <Method name="establecerCedula" returnType="void" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DocenteFactura" package="paquete1" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="docente" type="Docente" visibility="private"/>
+        <Field name="valorFactura" type="double" visibility="private"/>
+        <Field name="valorIvaDescuento" type="double" visibility="private"/>
+        <Field name="valorCancelar" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombres"/>
+          <Argument type="String" name="cedula"/>
+          <Argument type="double" name="valorFactur"/>
+          <Argument type="double" name="valorIvaDescuent"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularValorCancelar" returnType="double" visibility="private"/>
+        <Method name="establecerNombres" returnType="void" visibility="public">
+          <Argument type="String" name="nombres"/>
+        </Method>
+        <Method name="obtenerNombres" returnType="String" visibility="public"/>
+        <Method name="establecerCedula" returnType="void" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="obtenerCedula" returnType="String" visibility="public"/>
+        <Method name="establecerValorFactura" returnType="void" visibility="public">
+          <Argument type="double" name="valorFactur"/>
+        </Method>
+        <Method name="obtenerValorFactura" returnType="double" visibility="public"/>
+        <Method name="establecerValorIvaDescuento" returnType="void" visibility="public">
+          <Argument type="double" name="valorIvaDescuent"/>
+        </Method>
+        <Method name="obtenerValorIvaDescuento" returnType="double" visibility="public"/>
+        <Method name="establecerValorCancelar" returnType="void" visibility="public">
+          <Argument type="double" name="valorCancela"/>
+        </Method>
+        <Method name="obtenerValorCancelar" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DocenteNombramiento" package="paquete1" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="docente" type="Docente" visibility="private"/>
+        <Field name="valorSueldo" type="double" visibility="private"/>
+        <Field name="valorHoraExtra" type="double" visibility="private"/>
+        <Field name="numeroHorasExtra" type="int" visibility="private"/>
+        <Field name="sueldo" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombres"/>
+          <Argument type="String" name="cedula"/>
+          <Argument type="double" name="valorSueld"/>
+          <Argument type="double" name="valorHoraExtr"/>
+          <Argument type="int" name="numeroHorasExtr"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularSueldo" returnType="double" visibility="private"/>
+        <Method name="establecerNombres" returnType="void" visibility="public">
+          <Argument type="String" name="nombres"/>
+        </Method>
+        <Method name="obtenerNombres" returnType="String" visibility="public"/>
+        <Method name="establecerCedula" returnType="void" visibility="public">
+          <Argument type="String" name="cedula"/>
+        </Method>
+        <Method name="obtenerCedula" returnType="String" visibility="public"/>
+        <Method name="establecerValorSueldo" returnType="void" visibility="public">
+          <Argument type="double" name="valorSueld"/>
+        </Method>
+        <Method name="obtenerValorSueldo" returnType="double" visibility="public"/>
+        <Method name="establecerValorHoraExtra" returnType="void" visibility="public">
+          <Argument type="double" name="valorHoraExtr"/>
+        </Method>
+        <Method name="obtenerValorHoraExtra" returnType="double" visibility="public"/>
+        <Method name="establecerNumeroHorasExtra" returnType="void" visibility="public">
+          <Argument type="int" name="numeroHorasExtr"/>
+        </Method>
+        <Method name="obtenerNumeroHorasExtra" returnType="int" visibility="public"/>
+        <Method name="establecerSueldo" returnType="void" visibility="public">
+          <Argument type="double" name="sueld"/>
+        </Method>
+        <Method name="obtenerSueldo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="docente" source="paquete1.DocenteFactura" target="paquete1.Docente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="docente" source="paquete1.DocenteNombramiento" target="paquete1.Docente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

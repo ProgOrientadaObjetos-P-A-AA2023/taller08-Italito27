@@ -8,39 +8,11 @@ package paquete1;
  *
  * @author Italo
  */
-public class DocenteFactura {
+public class DocenteFactura extends Docente {
 
-    private Docente docente;
     private double valorFactura;
     private double valorIvaDescuento;
     private double valorCancelar;
-
-    public DocenteFactura(String nombres, String cedula, double valorFactur, double valorIvaDescuent) {
-        docente = new Docente(nombres, cedula);
-        valorFactura = valorFactur;
-        valorIvaDescuento = valorIvaDescuent;
-        valorCancelar = calcularValorCancelar();
-    }
-
-    private double calcularValorCancelar() {
-        return valorFactura + (valorFactura * valorIvaDescuento);
-    }
-
-    public void establecerNombres(String nombres) {
-        docente.establecerNombres(nombres);
-    }
-
-    public String obtenerNombres() {
-        return docente.obtenerNombres();
-    }
-
-    public void establecerCedula(String cedula) {
-        docente.establecerCedula(cedula);
-    }
-
-    public String obtenerCedula() {
-        return docente.obtenerCedula();
-    }
 
     public void establecerValorFactura(double valorFactur) {
         valorFactura = valorFactur;
@@ -62,8 +34,28 @@ public class DocenteFactura {
         valorCancelar = valorCancela;
     }
 
+    public void calcularValorCancelar() {
+        valorCancelar = valorFactura - ((valorIvaDescuento / 100) * valorFactura);
+    }
+
     public double obtenerValorCancelar() {
         return valorCancelar;
     }
 
+    @Override
+    public String toString() {
+        String reporte = String.format("\nDocente Factura: "
+                + "\nNombre: %s"
+                + "\nCedula: %s"
+                + "\nValor factura: %.2f"
+                + "\nValor Iva con descuento: %.2f"
+                + "\nValor a cancelar : %.2f",
+                obtenerNombres(),
+                obtenerCedula(),
+                obtenerValorFactura(),
+                obtenerValorIvaDescuento(),
+                obtenerValorCancelar());
+
+        return reporte;
+    }
 }

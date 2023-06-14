@@ -1,52 +1,28 @@
-
 package paquete1;
 
 /**
  *
  * @author Italo
  */
-public class DocenteNombramiento {
-    private Docente docente;
+public class DocenteNombramiento extends Docente{
+
     private double valorSueldo;
     private double valorHoraExtra;
     private int numeroHorasExtra;
-    private double sueldo;
+    private double salario;
 
-    public DocenteNombramiento(String nombres, String cedula, double valorSueld, double valorHoraExtr, int numeroHorasExtr) {
-        docente = new Docente(nombres, cedula);
-        valorSueldo = valorSueld;
-        valorHoraExtra = valorHoraExtr;
-        numeroHorasExtra = numeroHorasExtr;
-        sueldo = calcularSueldo();
-    }
-
-    private double calcularSueldo() {
-        return valorSueldo + (valorHoraExtra * numeroHorasExtra);
-    }
-
-    public void establecerNombres(String nombres) {
-        docente.establecerNombres(nombres);
-    }
-    
-    public String obtenerNombres() {
-        return docente.obtenerNombres();
-    }
-
-    public void establecerCedula(String cedula) {
-        docente.establecerCedula(cedula);
-    }
-    
-    public String obtenerCedula() {
-        return docente.obtenerCedula();
+    public void calcularSalario() {
+        salario = (valorHoraExtra * numeroHorasExtra) + valorSueldo;
     }
 
     public void establecerValorSueldo(double valorSueld) {
         valorSueldo = valorSueld;
     }
+
     public double obtenerValorSueldo() {
         return valorSueldo;
     }
-    
+
     public void establecerValorHoraExtra(double valorHoraExtr) {
         valorHoraExtra = valorHoraExtr;
     }
@@ -63,11 +39,22 @@ public class DocenteNombramiento {
         return numeroHorasExtra;
     }
 
-    public void establecerSueldo(double sueld) {
-        sueldo = sueld;
-    }
-    public double obtenerSueldo() {
-        return sueldo;
+    public double obtenerSalario() {
+        return salario;
     }
 
+    @Override
+    public String toString() {
+        String reporte = String.format("\nDocente Nombramiento: \nNombre: %s"
+                + "\nCedula %s"
+                + "\nValor del sueldo: %.2f"
+                + "\nValor hora extra: %.2f"
+                + "\nNumero de horas extra: %d"
+                + "\nSalario: %.2f\n", obtenerNombres(), obtenerCedula(), obtenerValorSueldo(),
+                obtenerValorHoraExtra(),
+                obtenerNumeroHorasExtra(),
+                obtenerSalario());
+
+        return reporte;
+    }
 }

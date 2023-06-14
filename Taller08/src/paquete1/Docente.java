@@ -13,24 +13,18 @@ public class Docente {
     protected String nombres;
     protected String cedula;
 
-    public Docente(String nombres, String cedula) {
-        this.nombres = nombres;
-        this.cedula = cedula;
+    public void establecerNombres(String nombre) {
+        nombres = nombre;
     }
-    
     public String obtenerNombres() {
         return nombres;
     }
-    
-    public void establecerNombres(String nombres) {
-        this.nombres = nombres;
+    public void establecerCedula(String cedul) {
+       cedula = cedul;
     }
     
     public String obtenerCedula() {
         return cedula;
     }
     
-    public void establecerCedula(String cedula) {
-        this.cedula = cedula;
-    }
 }
